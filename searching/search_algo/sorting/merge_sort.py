@@ -34,16 +34,7 @@ print(merge_two_sorted([2, 8, 15, 18], [5, 9, 12, 17, 19, 25, 30]))
 # let A = [9, 3, 7, 5, 6, 4, 8, 2]
 # assume each value is a list 
 
-def merge(arr):
-    
-    mid = len(arr) // 2
-    left_arr = arr[:mid]
-    right_arr = arr[mid:]
-    if len(arr) > 1:
-        merge(left_arr)
-        merge(right_arr)
-        merge_two_sorted(left_arr, right_ar
-    return arr
+
 
 
 
