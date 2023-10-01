@@ -5,8 +5,8 @@
 
 # this is to show how merging is done between two sorted arrays
 def merge_two_sorted(arr1, arr2):
-    i = 0;
-    j = 0;
+    i = 0
+    j = 0
 
     arr3 = []
     while i< len(arr1) and j< len(arr2):
@@ -40,5 +40,4 @@ print(merge_two_sorted([2, 8, 15, 18], [5, 9, 12, 17, 19, 25, 30]))
 
 
 
-print(merge([38, 27, 43, 3, 9, 82, 10]
-))
+
