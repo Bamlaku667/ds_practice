@@ -10,5 +10,4 @@ def insert_in_sorted(arr, n , key_to_insert):
     arr[i + 1] = key_to_insert
 
 arr = [1, 2, 4, 5, 6]
-insert_in_sorted(arr, len(arr), 3)  # insert at the fifth position of the array (i.e at the 6th index)
-print(arr)
+insert_in_sorted(arr, len(arr), 3) 
