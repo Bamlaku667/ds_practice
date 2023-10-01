@@ -1,4 +1,5 @@
 #inserting an element in a sorted array
+# o(n) time complexity 
 
 def insert_in_sorted(arr, n , key_to_insert):
     i = n - 1
