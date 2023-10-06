@@ -46,6 +46,22 @@ class BST:
                 print(temp_node.key, end = " ")
                 temp_node = temp_node.right
 
+    def search_tree(self, key):
+        result = self.search_utility(self.root, key)
+        if result is None:
+            print(f'{key} not found')
+        else: 
+            print(f"{key} found")
+        
+    def search_utility(self, node, key):
+        
+        if node is None or node.key == key:
+            return node
+        
+        if node.key < key:
+            return self.search_utility(node.right, key)
+         
+        return self.search_utility(node.left, key)
         
 
 
@@ -96,7 +112,12 @@ def main():
   
     tree.insert(80) 
 
+
     tree.inorder_iterative()
+    print()
+    tree.search_tree(79)
+
+   
 
 
    
