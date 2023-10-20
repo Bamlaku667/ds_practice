@@ -25,13 +25,15 @@ def merge(arr, left, right):
     for _ in range(i, len(left)):
         arr[k] = left[i]
         k += 1
+        i += 1
 
     for _ in range(j, len(right)):
         arr[k] = right[j]
         k += 1
+        j += 1
 
     
 
-arr = [9, 3, 7, 5, 6, 4, 8, 2]
+arr = [0, 1, 2]
 merge_sort(arr)
 print(arr)
