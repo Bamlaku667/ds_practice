@@ -1,43 +1,37 @@
-# with O(nlogn) time complexity (divide and conququer)
-# recursive method
+def merge_sort(arr):
+    # since low = hight ----> single element remains
+    if len(arr) > 1:
+        mid = len(arr) // 2
+        left_half = arr[:mid]
+        right_half = arr[mid:]
 
+        merge_sort(left_half)
+        merge_sort(right_half)
 
+        merge(arr, left_half, right_half)
 
-# this is to show how merging is done between two sorted arrays
-def merge_two_sorted(arr1, arr2):
-    i = 0
-    j = 0
-
-    arr3 = []
-    while i< len(arr1) and j< len(arr2):
-        if arr1[i] < arr2[j]:
-            arr3.append(arr1[i])
-            i+=1
+def merge(arr, left, right):
+    i = j = k = 0
+    
+    while i < len(left) and j < len(right):
+        if left[i] < right[j]:
+            arr[k] = left[i]
+            i += 1
         else:
-            arr3.append(arr2[j])
-            j+= 1
-        
-    while i < len(arr1):
-        arr3.append(arr1[i])
-        i += 1
+            arr[k] = right[j]
+            j += 1
+        k += 1
 
-    while j< len(arr2):
-        arr3.append(arr2[j])
-        j+= 1
+    for _ in range(i, len(left)):
+        arr[k] = left[i]
+        k += 1
 
-    return arr3
+    for _ in range(j, len(right)):
+        arr[k] = right[j]
+        k += 1
 
-print(merge_two_sorted([2, 8, 15, 18], [5, 9, 12, 17, 19, 25, 30]))
+    
 
-
-# two way merge sort
-# let A = [9, 3, 7, 5, 6, 4, 8, 2]
-# assume each value is a list 
-
-
-
-
-
-
-
-
+arr = [9, 3, 7, 5, 6, 4, 8, 2]
+merge_sort(arr)
+print(arr)
